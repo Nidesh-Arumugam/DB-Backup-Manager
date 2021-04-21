@@ -74,8 +74,7 @@ def  database_detail_view(request):
         handle.close()
     
         
-        # gzip = "gzip " + ZIP_BACKUP + "/" + DB_NAME + ".sql"
-        # os.system(gzip)
+       
     return render (request,'detail.html',{'data':all_database})
 
 
