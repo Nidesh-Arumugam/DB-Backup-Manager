@@ -1,0 +1,31 @@
+<h3>DataBase Form</h3>
+
+{% if user.is_authenticated %}
+<h2>Hello {{user.username}}, kindly enter the DB details for Backup</h2>
+<h4>After entering the Details click on Submit !!</h4>
+<h4> The Backup will be taken automatically every day</h4>
+<h4> If you need to take the backup rightnow click on backup button !</h4>
+
+<a href ="accounts/logout"> Logout </a>
+<hr>
+<br>
+<br>
+
+<form action="", method ="post">
+{% csrf_token %}
+{{form}}
+<input type= "submit" value="Add to Schedule">
+</form>
+<br>
+<br>
+<form action="detail">
+    <input type="submit" value="BACKUP NOW" />
+</form>
+<hr>
+{% else %}
+<h2>Hello user, Kindly Login before processing</h2>
+<a href ="accounts/login"> Login </a><br>
+{% endif %}
+
+
+
